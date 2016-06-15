@@ -31,16 +31,19 @@ class ReatNativeDemo extends Component {
     var movie=MOCKED_MOVIES_DATA[0];
     return (
       <View style={styles.container}>
-        <Text>
-         |{movie.title}
-        </Text>
-        <Text >
-          {movie.year}
-        </Text>
+     
       <Image
           source={{uri: movie.posters.thumbnail}}
           style={styles.thumbnail}
         />
+        <View style={styles.rightContainer}>
+           <Text style={styles.title}>
+         {movie.title}
+        </Text>
+        <Text style={styles.year}>
+          {movie.year}
+        </Text>
+        </View>
       </View>
     );
   }
@@ -49,13 +52,29 @@ class ReatNativeDemo extends Component {
 const styles = StyleSheet.create({
    container: {
     flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#E91e63',
   },
   thumbnail: {
     width: 53,
     height: 81,
+  },
+  rightContainer:{
+    flex:1,
+    backgroundColor:'#ffffff',
+  
+
+  },
+  title:{
+    fontSize:20,
+    marginBottom:8,
+    textAlign: 'center',
+    color: '#0288d1',
+  },
+  year:{
+    textAlign: 'center',
   },
  
 });
